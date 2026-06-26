@@ -5,31 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linkaren</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --fg: #ffffff;
+            --bg: #000000;
+        }
+        * { box-sizing: border-box; }
         body, html {
             height: 100%;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000000;
+            background-color: var(--bg);
         }
-        .logo-container {
-            width: 90%;
-            max-width: 800px;
-            display: flex;
-            justify-content: center;
+        .logo {
+            container-type: inline-size;
+            width: min(90vw, 720px);
+            position: relative;
         }
-        img {
+        .logo-stage {
+            position: relative;
             width: 100%;
-            height: auto;
-            max-width: 100%;
+            aspect-ratio: 960 / 1100;
+        }
+        .node {
+            position: absolute;
+            width: 9.895cqw;
+            height: 9.895cqw;
+            border: 2.526cqw solid var(--fg);
+            border-radius: 50%;
+            background: transparent;
+        }
+        .node.top { left: 32.63cqw; top: 22.74cqw; }
+        .node.bl  { left: 32.63cqw; top: 71cqw; }
+        .node.br  { left: 64cqw; top: 71cqw; }
+
+        .link {
+            position: absolute;
+            background: var(--fg);
+        }
+        .link.vertical {
+            left: 35.90cqw;
+            top: 32cqw;
+            width: 3.368cqw;
+            height: 39.58cqw;
+        }
+        .link.horizontal {
+            left: 42cqw;
+            top: 74cqw;
+            width: 22.21cqw;
+            height: 3.368cqw;
+        }
+        .wordmark {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 6cqw;
+            text-align: center;
+            font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+            font-weight: 700;
+            color: var(--fg);
+            font-size: 19.5cqw;
+            line-height: 1;
+            letter-spacing: 1.2cqw;
+            text-transform: uppercase;
+            text-indent: 1.2cqw;
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="Linkaren.Logo.svg" alt="Linkaren Logo">
+    <div class="logo">
+        <div class="logo-stage">
+            <span class="link vertical"></span>
+            <span class="link horizontal"></span>
+            <span class="node top"></span>
+            <span class="node bl"></span>
+            <span class="node br"></span>
+            <div class="wordmark">Linkaren</div>
+        </div>
     </div>
 </body>
 </html>
